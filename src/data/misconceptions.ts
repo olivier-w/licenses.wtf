@@ -41,7 +41,7 @@ export const misconceptions: Misconception[] = [
     id: "agpl-only-saas",
     myth: "AGPL only matters if you're running a SaaS product",
     reality:
-      "The AGPL's network-interaction clause applies to any situation where users interact with the software over a network, not just commercial SaaS. This may include internal tools served to employees (though this interpretation is debated), self-hosted applications accessed via a browser, and any server-side software that communicates with clients. If users interact with it remotely, the AGPL source-sharing requirement kicks in.",
+      "The AGPL's network-interaction clause (Section 13) applies whenever users outside your organization interact with the software over a network, not just commercial SaaS. However, purely internal organizational use does not trigger this clause — per the FSF's interpretation, employees of the same organization are not external \"users\" in this context. The clause does apply to self-hosted applications accessed by external users via a browser, public-facing APIs, and any server-side software that communicates with outside clients. If external users interact with it remotely, the AGPL source-sharing requirement kicks in.",
   },
   {
     id: "bsd-mit-same",
@@ -66,5 +66,23 @@ export const misconceptions: Misconception[] = [
     myth: "AI-generated code doesn't have license issues",
     reality:
       "AI models trained on licensed code may reproduce that code. The copyright status of AI outputs is actively debated and being litigated. When in doubt, verify that AI-suggested code doesn't replicate existing copyrighted work. Some organizations are developing tools to detect potential license conflicts in AI-generated code.",
+  },
+  {
+    id: "stackoverflow-free",
+    myth: "I found it on Stack Overflow, so I can use it freely",
+    reality:
+      "All user contributions to Stack Overflow are licensed under CC-BY-SA 4.0 (code posted after 2016; earlier content is CC-BY-SA 3.0). This means you must provide attribution and share any adaptations under the same license. CC-BY-SA's copyleft nature can create complications when combined with other licenses in your project. Many developers unknowingly violate these terms by copying code snippets without attribution.",
+  },
+  {
+    id: "few-lines-not-derivative",
+    myth: "Changing a few lines makes it not a derivative work",
+    reality:
+      "Courts look at substantial similarity, not line counts, when determining whether something is a derivative work. Modifying, renaming variables, or reformatting copyrighted code does not automatically create an independent work. If the structure, sequence, and organization of the original are preserved, a court may still consider it a derivative work regardless of how many lines were changed.",
+  },
+  {
+    id: "licenses-tested-in-court",
+    myth: "Open source licenses have been thoroughly tested in court",
+    reality:
+      "Most open source licenses have very little case law. The GPL has some enforcement history — notably through cases brought by the Software Freedom Conservancy and the Free Software Foundation — but even GPL litigation has mostly resulted in settlements rather than court rulings. Licenses like MIT, BSD, and Apache 2.0 have almost no direct judicial precedent. This doesn't mean they're unenforceable; it means many edge-case questions remain legally untested.",
   },
 ];

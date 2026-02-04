@@ -7,7 +7,7 @@ A beautiful, modern, single-page educational site helping developers understand 
 ## Features
 
 - **Interactive License Spectrum** — visual gradient bar showing where each license falls from permissive to restrictive
-- **Filterable License Cards** — deep dives into 11 licenses with permissions, conditions, limitations, and notable projects
+- **Filterable License Cards** — deep dives into 13 licenses with permissions, conditions, limitations, and notable projects
 - **Side-by-Side Comparison Table** — full matrix of what each license permits, requires, and restricts
 - **Decision Wizard** — answer a few questions to get a license recommendation
 - **Common Misconceptions** — myth/reality accordion cards debunking common misunderstandings
@@ -15,7 +15,7 @@ A beautiful, modern, single-page educational site helping developers understand 
 
 ## Licenses Covered
 
-MIT, Apache 2.0, BSD 2-Clause, ISC, MPL 2.0, LGPL v3, GPL v2, GPL v3, AGPL v3, BSL/FSL, Unlicense
+MIT, Apache 2.0, BSD 2-Clause, BSD 3-Clause, ISC, MPL 2.0, LGPL v3, GPL v2, GPL v3, AGPL v3, BSL/FSL, CC0, Unlicense
 
 ## Tech Stack
 

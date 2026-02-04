@@ -45,7 +45,7 @@ export function LicenseGrid() {
         <LicenseFilters active={filter} onChange={setFilter} />
       </div>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+      <div className="mt-8 grid gap-4">
         {filtered.map((license) => (
           <LicenseCard
             key={license.id}

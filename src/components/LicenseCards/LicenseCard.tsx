@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { CATEGORY_COLORS, type License } from "../../lib/types";
 import { PermissionList } from "./PermissionList";
 
@@ -12,10 +12,8 @@ export function LicenseCard({ license, isExpanded, onToggle }: LicenseCardProps)
   const colors = CATEGORY_COLORS[license.category];
 
   return (
-    <motion.div
+    <div
       id={`license-${license.id}`}
-      layout
-      transition={{ duration: 0.25, ease: "easeOut" }}
       className="rounded-xl border border-border bg-bg-elevated shadow-sm overflow-hidden"
     >
       <button
@@ -65,42 +63,47 @@ export function LicenseCard({ license, isExpanded, onToggle }: LicenseCardProps)
         </div>
       </button>
 
-      {isExpanded ? (
-        <motion.div
-          id={`license-detail-${license.id}`}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.2 }}
-          className="border-t border-border px-6 py-5"
-        >
-          <p className="text-sm text-text-muted leading-relaxed">{license.description}</p>
+      <AnimatePresence initial={false}>
+        {isExpanded && (
+          <motion.div
+            id={`license-detail-${license.id}`}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="overflow-hidden"
+          >
+            <div className="border-t border-border px-6 py-5">
+              <p className="text-sm text-text-muted leading-relaxed">{license.description}</p>
 
-          <div className="mt-4 rounded-lg bg-surface p-4">
-            <p className="text-xs font-medium text-text-faint uppercase tracking-wider mb-1">
-              TL;DR
-            </p>
-            <p className="text-sm font-medium text-text">{license.tldr}</p>
-          </div>
+              <div className="mt-4 rounded-lg bg-surface p-4">
+                <p className="text-xs font-medium text-text-faint uppercase tracking-wider mb-1">
+                  TL;DR
+                </p>
+                <p className="text-sm font-medium text-text">{license.tldr}</p>
+              </div>
 
-          <div className="mt-5">
-            <PermissionList
-              permissions={license.permissions}
-              conditions={license.conditions}
-              limitations={license.limitations}
-            />
-          </div>
+              <div className="mt-5">
+                <PermissionList
+                  permissions={license.permissions}
+                  conditions={license.conditions}
+                  limitations={license.limitations}
+                />
+              </div>
 
-          {license.osiApproved ? (
-            <p className="mt-4 text-xs text-permissive">
-              &#10003; OSI Approved
-            </p>
-          ) : (
-            <p className="mt-4 text-xs text-text-faint">
-              Not OSI Approved
-            </p>
-          )}
-        </motion.div>
-      ) : null}
-    </motion.div>
+              {license.osiApproved ? (
+                <p className="mt-4 text-xs text-permissive">
+                  &#10003; OSI Approved
+                </p>
+              ) : (
+                <p className="mt-4 text-xs text-text-faint">
+                  Not OSI Approved
+                </p>
+              )}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

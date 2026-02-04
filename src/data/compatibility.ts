@@ -34,9 +34,9 @@ export const LICENSE_SHORT_NAMES: Record<string, string> = {
 export const compatibilityData: CompatibilityEntry[] = [
   // MIT can flow into anything
   { from: "mit", to: "mit", compatible: true },
-  { from: "mit", to: "bsd-2-clause", compatible: true },
-  { from: "mit", to: "bsd-3-clause", compatible: true },
-  { from: "mit", to: "apache-2.0", compatible: true },
+  { from: "mit", to: "bsd-2-clause", compatible: true, note: "MIT code retains its original license terms" },
+  { from: "mit", to: "bsd-3-clause", compatible: true, note: "MIT code retains its original license terms" },
+  { from: "mit", to: "apache-2.0", compatible: true, note: "MIT code retains its original license terms" },
   { from: "mit", to: "mpl-2.0", compatible: true },
   { from: "mit", to: "lgpl-3.0", compatible: true },
   { from: "mit", to: "gpl-2.0", compatible: true },
@@ -44,10 +44,10 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "mit", to: "agpl-3.0", compatible: true },
 
   // BSD 2-Clause can flow into anything
-  { from: "bsd-2-clause", to: "mit", compatible: true },
+  { from: "bsd-2-clause", to: "mit", compatible: true, note: "BSD 2-Clause code retains its original license terms" },
   { from: "bsd-2-clause", to: "bsd-2-clause", compatible: true },
-  { from: "bsd-2-clause", to: "bsd-3-clause", compatible: true },
-  { from: "bsd-2-clause", to: "apache-2.0", compatible: true },
+  { from: "bsd-2-clause", to: "bsd-3-clause", compatible: true, note: "BSD 2-Clause code retains its original license terms" },
+  { from: "bsd-2-clause", to: "apache-2.0", compatible: true, note: "BSD 2-Clause code retains its original license terms" },
   { from: "bsd-2-clause", to: "mpl-2.0", compatible: true },
   { from: "bsd-2-clause", to: "lgpl-3.0", compatible: true },
   { from: "bsd-2-clause", to: "gpl-2.0", compatible: true },
@@ -55,10 +55,10 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "bsd-2-clause", to: "agpl-3.0", compatible: true },
 
   // BSD 3-Clause can flow into anything
-  { from: "bsd-3-clause", to: "mit", compatible: true },
-  { from: "bsd-3-clause", to: "bsd-2-clause", compatible: true },
+  { from: "bsd-3-clause", to: "mit", compatible: true, note: "BSD 3-Clause code retains its terms including the non-endorsement clause" },
+  { from: "bsd-3-clause", to: "bsd-2-clause", compatible: true, note: "BSD 3-Clause code retains its terms including the non-endorsement clause" },
   { from: "bsd-3-clause", to: "bsd-3-clause", compatible: true },
-  { from: "bsd-3-clause", to: "apache-2.0", compatible: true },
+  { from: "bsd-3-clause", to: "apache-2.0", compatible: true, note: "BSD 3-Clause code retains its terms including the non-endorsement clause" },
   { from: "bsd-3-clause", to: "mpl-2.0", compatible: true },
   { from: "bsd-3-clause", to: "lgpl-3.0", compatible: true },
   { from: "bsd-3-clause", to: "gpl-2.0", compatible: true },
@@ -66,9 +66,9 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "bsd-3-clause", to: "agpl-3.0", compatible: true },
 
   // Apache 2.0 can flow into most, but NOT GPL v2 (patent clause conflict)
-  { from: "apache-2.0", to: "mit", compatible: true },
-  { from: "apache-2.0", to: "bsd-2-clause", compatible: true },
-  { from: "apache-2.0", to: "bsd-3-clause", compatible: true },
+  { from: "apache-2.0", to: "mit", compatible: true, note: "Apache 2.0 code retains its terms including patent grant and NOTICE requirements" },
+  { from: "apache-2.0", to: "bsd-2-clause", compatible: true, note: "Apache 2.0 code retains its terms including patent grant and NOTICE requirements" },
+  { from: "apache-2.0", to: "bsd-3-clause", compatible: true, note: "Apache 2.0 code retains its terms including patent grant and NOTICE requirements" },
   { from: "apache-2.0", to: "apache-2.0", compatible: true },
   { from: "apache-2.0", to: "mpl-2.0", compatible: true },
   { from: "apache-2.0", to: "lgpl-3.0", compatible: true },
@@ -137,4 +137,5 @@ export const compatibilityNotes = [
   "GPL v2 is incompatible with Apache 2.0 due to a patent clause conflict. GPL v3 resolved this.",
   "MPL 2.0 has explicit GPL compatibility via Section 3.3, allowing MPL-licensed code to be combined with GPL code.",
   "GPL v2-only code cannot be upgraded to GPL v3 unless the author included an \"or later version\" clause.",
+  "Code included from another license retains its original terms. \"Compatible\" means the licenses can coexist in one project, not that code is relicensed.",
 ];

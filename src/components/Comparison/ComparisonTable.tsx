@@ -38,7 +38,7 @@ const ALL_LIMITATIONS: LimitationType[] = [
 
 const GPL_COMPATIBLE: Record<string, boolean | null> = {
   mit: true,
-  "apache-2.0": true, // Compatible with GPL v3, not GPL v2 — mark as yes since v3 is current
+  "apache-2.0": true,
   "bsd-2-clause": true,
   "bsd-3-clause": true,
   isc: true,
@@ -50,6 +50,10 @@ const GPL_COMPATIBLE: Record<string, boolean | null> = {
   "bsl-1.1": false,
   "cc0-1.0": true,
   unlicense: true,
+};
+
+const GPL_COMPAT_FOOTNOTES: Record<string, string> = {
+  "apache-2.0": "Compatible with GPL v3+, not GPL v2-only",
 };
 
 function Check() {
@@ -166,8 +170,22 @@ export function ComparisonTable() {
                       {license.limitations.includes(l) ? <Check /> : <X />}
                     </td>
                   ))}
-                  <td className="px-2 py-3 text-center border-l border-border">
-                    {gplCompat === true ? <Check /> : gplCompat === false ? <X /> : <span className="text-text-faint">—</span>}
+                  <td
+                    className={`px-2 py-3 text-center border-l border-border ${GPL_COMPAT_FOOTNOTES[license.id] ? "cursor-help" : ""}`}
+                    title={GPL_COMPAT_FOOTNOTES[license.id]}
+                  >
+                    {gplCompat === true ? (
+                      <span className="inline-flex items-center justify-center gap-0.5">
+                        <Check />
+                        {GPL_COMPAT_FOOTNOTES[license.id] ? (
+                          <span className="text-[10px] text-copyleft font-medium align-super">*</span>
+                        ) : null}
+                      </span>
+                    ) : gplCompat === false ? (
+                      <X />
+                    ) : (
+                      <span className="text-text-faint">—</span>
+                    )}
                   </td>
                 </tr>
               );
@@ -175,6 +193,10 @@ export function ComparisonTable() {
           </tbody>
         </table>
       </div>
+
+      <p className="mt-3 text-xs text-text-faint">
+        <span className="text-copyleft font-medium">*</span> Compatible with GPL v3+, not GPL v2-only. The Linux kernel (GPL v2-only) is the most prominent GPL v2 project.
+      </p>
     </SectionWrapper>
   );
 }

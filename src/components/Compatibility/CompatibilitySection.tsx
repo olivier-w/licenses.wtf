@@ -107,6 +107,10 @@ export function CompatibilitySection() {
         </div>
       ) : null}
 
+      <div className="mt-4 rounded-lg border border-border bg-surface/50 px-4 py-3 text-xs text-text-faint">
+        This matrix covers the 9 most common OSI-approved licenses. Public domain dedications (CC0, Unlicense) are compatible with everything. BSL 1.1 is not included because it is not open source and compatibility depends on its specific additional use grant.
+      </div>
+
       <div className="mt-6 space-y-2">
         {compatibilityNotes.map((note, i) => (
           <div key={i} className="flex items-start gap-2.5 text-sm text-text-muted">

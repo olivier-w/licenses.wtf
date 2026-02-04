@@ -57,9 +57,11 @@ export function WhyLicenses() {
         <p className="text-sm text-copyleft">
           <span className="font-semibold">Real-world example:</span> In 2023,
           HashiCorp changed Terraform's license from the open-source MPL 2.0 to
-          the source-available BSL 1.1. Because the MPL license allowed it, the
-          community legally forked the project as OpenTofu. Understanding your
-          license choice means understanding what happens when the rules change.
+          the source-available BSL 1.1. Because Terraform's existing code had
+          been irrevocably released under MPL 2.0 — an open source license — the
+          community was able to legally fork the last open-source version as
+          OpenTofu. Understanding your license choice means understanding what
+          happens when the rules change.
         </p>
       </div>
     </SectionWrapper>

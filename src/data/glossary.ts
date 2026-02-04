@@ -127,4 +127,40 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       "A formal inventory of all components, libraries, and dependencies used in a piece of software, including their versions and licenses. SBOMs are increasingly mandated by government regulations and enterprise procurement policies to ensure license compliance and identify security vulnerabilities across the software supply chain.",
   },
+  {
+    id: "weak-copyleft",
+    term: "Weak Copyleft",
+    definition:
+      "A copyleft approach where the share-alike requirement applies only to modifications of the licensed code itself, not to the larger work that uses it. This allows proprietary software to use weak-copyleft libraries as long as changes to the library are shared. MPL 2.0 (file-level copyleft) and LGPL (library-level copyleft) are the most common weak copyleft licenses.",
+  },
+  {
+    id: "strong-copyleft",
+    term: "Strong Copyleft",
+    definition:
+      "A copyleft approach where the share-alike requirement extends to the entire work that incorporates the licensed code. If you include strong-copyleft code in your project and distribute it, your entire project must be released under the same license. GPL v2 and GPL v3 are the most well-known strong copyleft licenses.",
+  },
+  {
+    id: "source-available",
+    term: "Source Available",
+    definition:
+      "Software whose source code is publicly viewable but whose license restricts certain uses (typically commercial or production use), meaning it does not meet the Open Source Definition. Source-available licenses like BSL 1.1 and the Functional Source License are often confused with open source but impose restrictions that OSI-approved licenses do not. The distinction matters because \"source available\" does not grant the same freedoms as \"open source.\"",
+  },
+  {
+    id: "license-compatibility",
+    term: "License Compatibility",
+    definition:
+      "The ability to combine code from different licenses in a single project without violating any license's terms. Two licenses are compatible if their conditions can be simultaneously satisfied. For example, MIT code can be included in a GPL project because MIT's conditions (attribution) are a subset of GPL's. However, GPL code cannot be included in an MIT project because the MIT license cannot satisfy GPL's copyleft requirements.",
+  },
+  {
+    id: "dco",
+    term: "DCO (Developer Certificate of Origin)",
+    definition:
+      "A lightweight alternative to Contributor License Agreements (CLAs) where contributors certify they have the right to submit their contributions under the project's license. Contributors sign off by adding a \"Signed-off-by\" line to their commit messages. The DCO was created by the Linux Foundation and is used by the Linux kernel, GitLab, and many other projects. Unlike CLAs, DCOs don't grant additional rights to the project maintainer.",
+  },
+  {
+    id: "upstream-downstream",
+    term: "Upstream / Downstream",
+    definition:
+      "In open source, \"upstream\" refers to the original project or dependency you receive code from, and \"downstream\" refers to projects or users that depend on your code. License obligations flow downstream: if your upstream dependency is GPL-licensed, that obligation flows down to your project and to anyone who uses your project. Understanding this flow is critical when auditing license compliance across a dependency tree.",
+  },
 ];

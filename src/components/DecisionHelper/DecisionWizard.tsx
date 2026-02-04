@@ -59,7 +59,12 @@ export function DecisionWizard() {
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-text-muted">
           Answer a few questions and we'll recommend the best license for your
-          project.
+          project. Looking to understand a license you've encountered? Explore
+          our{" "}
+          <a href="#licenses" className="text-accent underline underline-offset-2 hover:text-accent/80">
+            license cards
+          </a>{" "}
+          above instead.
         </p>
       </div>
 

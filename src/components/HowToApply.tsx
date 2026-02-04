@@ -28,6 +28,20 @@ const STEPS = [
     example:
       "GPL-2.0-only    → Must stay GPL v2\nGPL-2.0-or-later → Can use GPL v2, v3, or future versions",
   },
+  {
+    title: "Audit your dependencies' licenses",
+    description:
+      "Before releasing your project, check what licenses your dependencies use. Incompatible licenses in your dependency tree can create legal risk. Use automated tools to scan your project and flag potential conflicts.",
+    example:
+      "# JavaScript/Node.js\nnpx license-checker --summary\n\n# Rust\ncargo deny check licenses\n\n# Multi-language / Enterprise\n# FOSSA, Snyk, or OSS Review Toolkit",
+  },
+  {
+    title: "Understand when obligations trigger",
+    description:
+      "Most open source license obligations only apply when you distribute the software — sharing copies, publishing downloads, or shipping products. Internal use within your organization generally doesn't trigger copyleft requirements. The major exception is the AGPL, which treats providing software over a network as distribution. Know whether you're distributing, and you'll know which obligations apply.",
+    example:
+      "Internal use only      → Most obligations don't apply\nDistributing binaries   → Must comply with license terms\nOffering as a service   → AGPL obligations apply\nUsing as a dependency   → Check if you're distributing",
+  },
 ];
 
 export function HowToApply() {

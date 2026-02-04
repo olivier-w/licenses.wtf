@@ -17,9 +17,9 @@ Single-page React app (no router) about open source licenses. Purely static — 
 
 **Data flow:** `src/data/*.ts` (static arrays) → imported directly by section components → rendered with local React state for interactivity (filters, expand/collapse, wizard steps).
 
-**App shell:** `App.tsx` renders a fixed `Sidebar` (desktop) / `MobileNav` (mobile) + 8 scrollable `<section>` blocks. The `useActiveSection` hook uses IntersectionObserver to track which section is in viewport and highlights the corresponding nav item.
+**App shell:** `App.tsx` renders a fixed `Sidebar` (desktop) / `MobileNav` (mobile) + 10 scrollable `<section>` blocks. The `useActiveSection` hook uses IntersectionObserver to track which section is in viewport and highlights the corresponding nav item.
 
-**Section IDs** (defined in `src/lib/types.ts` as `SECTIONS`): hero, why, spectrum, licenses, comparison, decision, misconceptions, glossary. These IDs are used for scroll-to navigation and observer tracking.
+**Section IDs** (defined in `src/lib/types.ts` as `SECTIONS`): hero, why, spectrum, licenses, comparison, compatibility, decision, how-to-apply, misconceptions, glossary. These IDs are used for scroll-to navigation and observer tracking.
 
 ## Key Conventions
 
@@ -33,7 +33,7 @@ Single-page React app (no router) about open source licenses. Purely static — 
 
 ## Data Model
 
-All types in `src/lib/types.ts`. The core type is `License` with fields: id, spdx, name, category, permissions[], conditions[], limitations[], notableProjects[], spectrumPosition (0–100), osiApproved, tldr. 11 licenses total in `src/data/licenses.ts`.
+All types in `src/lib/types.ts`. The core type is `License` with fields: id, spdx, name, category, permissions[], conditions[], limitations[], notableProjects[], spectrumPosition (0–100), osiApproved, tldr. 13 licenses total in `src/data/licenses.ts`.
 
 The decision wizard uses `DecisionNode[]` in `src/data/decisionTree.ts` — a tree of questions where each option either points to the next node (`nextNodeId`) or terminates with recommended license IDs.
 
