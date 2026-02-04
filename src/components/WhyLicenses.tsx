@@ -55,11 +55,11 @@ export function WhyLicenses() {
 
       <div className="mt-8 rounded-xl border border-copyleft/30 bg-copyleft-light p-5">
         <p className="text-sm text-copyleft">
-          <span className="font-semibold">Real-world example:</span> In 2021,
-          a developer deleted their unlicensed npm packages and broke thousands
-          of builds. With a proper license, forks could have legally continued
-          distribution. Licensing isn't just about permissions — it's about
-          sustainability.
+          <span className="font-semibold">Real-world example:</span> In 2023,
+          HashiCorp changed Terraform's license from the open-source MPL 2.0 to
+          the source-available BSL 1.1. Because the MPL license allowed it, the
+          community legally forked the project as OpenTofu. Understanding your
+          license choice means understanding what happens when the rules change.
         </p>
       </div>
     </SectionWrapper>

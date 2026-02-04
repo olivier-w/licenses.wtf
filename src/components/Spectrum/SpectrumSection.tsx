@@ -25,8 +25,13 @@ export function SpectrumSection() {
         <SpectrumBar onLicenseClick={handleLicenseClick} />
       </div>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-4">
+      <div className="mt-8 grid gap-4 md:grid-cols-5">
         {[
+          {
+            color: "bg-permissive",
+            label: "Public Domain",
+            desc: "No copyright. Use for any purpose with no conditions.",
+          },
           {
             color: "bg-permissive",
             label: "Permissive",
@@ -57,6 +62,13 @@ export function SpectrumSection() {
           </div>
         ))}
       </div>
+
+      <p className="mt-6 text-xs text-text-faint leading-relaxed text-center max-w-2xl mx-auto">
+        Note: This spectrum simplifies a complex landscape. Copyleft licenses
+        restrict how you distribute code, while source-available licenses
+        restrict what you can do with it — these are different kinds of
+        requirements.
+      </p>
     </SectionWrapper>
   );
 }

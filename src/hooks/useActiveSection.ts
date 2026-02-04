@@ -12,7 +12,9 @@ export function useActiveSection(): SectionId {
       "spectrum",
       "licenses",
       "comparison",
+      "compatibility",
       "decision",
+      "how-to-apply",
       "misconceptions",
       "glossary",
     ] as const;

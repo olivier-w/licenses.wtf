@@ -20,6 +20,7 @@ const ALL_PERMISSIONS: PermissionType[] = [
 
 const ALL_CONDITIONS: ConditionType[] = [
   "include-copyright",
+  "no-endorsement",
   "document-changes",
   "disclose-source",
   "network-use-disclose",
@@ -34,6 +35,22 @@ const ALL_LIMITATIONS: LimitationType[] = [
   "no-trademark-use",
   "no-patent-use",
 ];
+
+const GPL_COMPATIBLE: Record<string, boolean | null> = {
+  mit: true,
+  "apache-2.0": true, // Compatible with GPL v3, not GPL v2 — mark as yes since v3 is current
+  "bsd-2-clause": true,
+  "bsd-3-clause": true,
+  isc: true,
+  "mpl-2.0": true,
+  "lgpl-3.0": true,
+  "gpl-2.0": true,
+  "gpl-3.0": true,
+  "agpl-3.0": true,
+  "bsl-1.1": false,
+  "cc0-1.0": true,
+  unlicense: true,
+};
 
 function Check() {
   return (
@@ -65,7 +82,7 @@ export function ComparisonTable() {
       </div>
 
       <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-bg-elevated shadow-sm">
-        <table className="w-full min-w-[800px] border-collapse text-sm">
+        <table className="w-full min-w-[900px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-border bg-surface">
               <th className="sticky left-0 z-10 bg-surface px-4 py-3 text-left text-xs font-medium text-text-faint uppercase tracking-wider min-w-[140px]">
@@ -89,6 +106,11 @@ export function ComparisonTable() {
               >
                 Limitations
               </th>
+              <th
+                className="px-2 py-3 text-center text-xs font-medium text-accent uppercase tracking-wider border-l border-border"
+              >
+                Compat.
+              </th>
             </tr>
             <tr className="border-b border-border text-[11px] text-text-faint">
               <th className="sticky left-0 z-10 bg-bg-elevated px-4 py-2" />
@@ -107,11 +129,15 @@ export function ComparisonTable() {
                   {LIMITATION_LABELS[l]}
                 </th>
               ))}
+              <th className="px-2 py-2 text-center font-normal border-l border-border">
+                GPL compatible?
+              </th>
             </tr>
           </thead>
           <tbody>
             {licenses.map((license, i) => {
               const colors = CATEGORY_COLORS[license.category];
+              const gplCompat = GPL_COMPATIBLE[license.id];
               return (
                 <tr
                   key={license.id}
@@ -140,6 +166,9 @@ export function ComparisonTable() {
                       {license.limitations.includes(l) ? <Check /> : <X />}
                     </td>
                   ))}
+                  <td className="px-2 py-3 text-center border-l border-border">
+                    {gplCompat === true ? <Check /> : gplCompat === false ? <X /> : <span className="text-text-faint">—</span>}
+                  </td>
                 </tr>
               );
             })}

@@ -44,10 +44,14 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6">
+        <div className="mt-10 border-t border-border pt-6 space-y-2">
           <p className="text-center text-xs text-text-faint">
             This site is itself open source. License information sourced from
             official license texts and the OSI.
+          </p>
+          <p className="text-center text-xs text-text-faint">
+            License interpretations may vary by jurisdiction. This content
+            reflects common understandings and is not legal advice.
           </p>
         </div>
       </div>

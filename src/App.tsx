@@ -6,7 +6,9 @@ import { WhyLicenses } from "./components/WhyLicenses";
 import { SpectrumSection } from "./components/Spectrum/SpectrumSection";
 import { LicenseGrid } from "./components/LicenseCards/LicenseGrid";
 import { ComparisonTable } from "./components/Comparison/ComparisonTable";
+import { CompatibilitySection } from "./components/Compatibility/CompatibilitySection";
 import { DecisionWizard } from "./components/DecisionHelper/DecisionWizard";
+import { HowToApply } from "./components/HowToApply";
 import { MisconceptionList } from "./components/Misconceptions/MisconceptionList";
 import { GlossarySection } from "./components/Glossary/GlossarySection";
 import { useActiveSection } from "./hooks/useActiveSection";
@@ -25,7 +27,9 @@ export default function App() {
         <SpectrumSection />
         <LicenseGrid />
         <ComparisonTable />
+        <CompatibilitySection />
         <DecisionWizard />
+        <HowToApply />
         <MisconceptionList />
         <GlossarySection />
       </main>

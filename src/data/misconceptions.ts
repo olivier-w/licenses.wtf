@@ -23,7 +23,7 @@ export const misconceptions: Misconception[] = [
     id: "gpl-viral-always",
     myth: "Using a GPL library makes my entire project GPL",
     reality:
-      "It depends on how you use the library. Dynamically linking to a GPL library, using it as a separate process, or interacting via a network API generally does not require your code to be GPL. Static linking and directly incorporating GPL code into your project typically does trigger the copyleft requirement. The LGPL was specifically created to allow library use without this concern.",
+      "It depends on how you use the library. Static linking and directly incorporating GPL code into your project typically does trigger the copyleft requirement. Whether dynamic linking triggers it is debated: the Free Software Foundation considers dynamic linking to create a derivative work, while others disagree. This remains legally unsettled. Using GPL code as a separate process or interacting via a network API is generally considered safe. The LGPL was specifically created to allow library use without this concern.",
   },
   {
     id: "open-source-no-restrictions",
@@ -41,12 +41,30 @@ export const misconceptions: Misconception[] = [
     id: "agpl-only-saas",
     myth: "AGPL only matters if you're running a SaaS product",
     reality:
-      "The AGPL's network-interaction clause applies to any situation where users interact with the software over a network, not just commercial SaaS. This includes internal tools served to employees, self-hosted applications accessed via a browser, and any server-side software that communicates with clients. If users interact with it remotely, the AGPL source-sharing requirement kicks in.",
+      "The AGPL's network-interaction clause applies to any situation where users interact with the software over a network, not just commercial SaaS. This may include internal tools served to employees (though this interpretation is debated), self-hosted applications accessed via a browser, and any server-side software that communicates with clients. If users interact with it remotely, the AGPL source-sharing requirement kicks in.",
   },
   {
     id: "bsd-mit-same",
     myth: "BSD and MIT licenses are basically the same thing",
     reality:
       "While both are permissive, there are subtle differences. The 2-Clause BSD and MIT are very similar in effect, but the 3-Clause BSD adds a non-endorsement clause preventing you from using the author's name to promote derived products. The original 4-Clause BSD had an advertising clause that caused compatibility problems. These distinctions can matter when combining code under different licenses.",
+  },
+  {
+    id: "readme-enough",
+    myth: "Putting 'MIT License' in your README is enough",
+    reality:
+      "The MIT license text itself requires the full copyright notice and permission notice to be included. A mention in the README without the actual LICENSE file doesn't satisfy the license terms. Always include the complete license text in a LICENSE file at the root of your repository, with the correct copyright year and holder name.",
+  },
+  {
+    id: "open-source-no-sue",
+    myth: "Open source means the author can't sue you",
+    reality:
+      "If you violate the license terms, you lose your license grant and the copyright holder can pursue infringement claims. GPL enforcement lawsuits are real — organizations like the Software Freedom Conservancy actively enforce GPL compliance. An open source license is a conditional grant of rights: meet the conditions, and you're fine. Violate them, and you're infringing copyright.",
+  },
+  {
+    id: "ai-code-no-issues",
+    myth: "AI-generated code doesn't have license issues",
+    reality:
+      "AI models trained on licensed code may reproduce that code. The copyright status of AI outputs is actively debated and being litigated. When in doubt, verify that AI-suggested code doesn't replicate existing copyrighted work. Some organizations are developing tools to detect potential license conflicts in AI-generated code.",
   },
 ];

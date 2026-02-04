@@ -49,7 +49,7 @@ export function DecisionWizard() {
   }, []);
 
   const stepNumber = history.length + 1;
-  const totalSteps = decisionTree.length;
+  const maxDepth = 4;
 
   return (
     <SectionWrapper id="decision">
@@ -69,7 +69,7 @@ export function DecisionWizard() {
           {!result ? (
             <div className="mb-6">
               <div className="flex items-center justify-between text-xs text-text-faint mb-2">
-                <span>Step {stepNumber} of ~{totalSteps}</span>
+                <span>Question {stepNumber}</span>
                 {history.length > 0 ? (
                   <button
                     onClick={handleBack}
@@ -82,7 +82,7 @@ export function DecisionWizard() {
               <div className="h-1.5 rounded-full bg-surface overflow-hidden">
                 <div
                   className="h-full rounded-full bg-accent transition-all duration-300"
-                  style={{ width: `${(stepNumber / totalSteps) * 100}%` }}
+                  style={{ width: `${Math.min((stepNumber / maxDepth) * 100, 100)}%` }}
                 />
               </div>
             </div>

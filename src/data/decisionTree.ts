@@ -28,9 +28,9 @@ export const decisionTree: DecisionNode[] = [
         description:
           "Give up all rights and let anyone do anything with no conditions at all",
         nextNodeId: null,
-        resultLicenses: ["unlicense"],
+        resultLicenses: ["cc0-1.0", "unlicense"],
         resultReasoning:
-          "The Unlicense dedicates your work to the public domain and waives all copyright. Anyone can use, modify, and distribute your code with zero obligations. If you want absolutely no strings attached, this is the simplest option.",
+          "CC0 and the Unlicense both dedicate your work to the public domain. CC0 is generally preferred because it was drafted by Creative Commons with extensive international legal analysis, making it more robust across jurisdictions. The Unlicense is simpler and more concise. Both result in zero obligations for users.",
       },
     ],
   },
@@ -82,9 +82,9 @@ export const decisionTree: DecisionNode[] = [
         description:
           "Prevent others from using your name to promote their products",
         nextNodeId: null,
-        resultLicenses: ["bsd-2-clause"],
+        resultLicenses: ["bsd-3-clause"],
         resultReasoning:
-          "The 2-Clause BSD license is very similar to MIT but comes from the BSD tradition. If you want the familiar BSD branding or are contributing to the BSD ecosystem, this is a natural fit. For a non-endorsement clause, consider the 3-Clause BSD variant.",
+          "The 3-Clause BSD license includes a clause that prevents others from using your name or the names of contributors to endorse or promote derived products without permission. It is widely used by projects like Go, Nginx, and CMake.",
       },
     ],
   },

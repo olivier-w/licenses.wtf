@@ -91,4 +91,40 @@ export const glossaryTerms: GlossaryTerm[] = [
     definition:
       "A legal doctrine (primarily in U.S. law) that allows limited use of copyrighted material without permission for purposes such as commentary, criticism, education, or research. Fair use is determined case by case and is not a reliable defense for using unlicensed code in a software project. When in doubt, always check the license.",
   },
+  {
+    id: "tivoization",
+    term: "Tivoization",
+    definition:
+      "The practice of using hardware restrictions to prevent users from running modified software on a device, even when the software's license gives them the right to modify it. Named after TiVo, which used GPL-licensed Linux but locked its hardware to reject modified software. GPL v3 was written specifically to prohibit this practice.",
+  },
+  {
+    id: "patent-retaliation",
+    term: "Patent Retaliation",
+    definition:
+      "A clause found in licenses like Apache 2.0 that terminates the patent grant if a licensee initiates patent litigation related to the software. If you sue a contributor claiming their code infringes your patents, you lose the patent license they granted you. This discourages patent warfare within open source communities.",
+  },
+  {
+    id: "fork",
+    term: "Fork",
+    definition:
+      "A copy of a software project that is developed independently from the original. Forks are a fundamental right granted by most open source licenses. They can be friendly (feature experiments that may merge back) or hostile (a permanent split due to disagreements). Notable forks include LibreOffice from OpenOffice and OpenTofu from Terraform.",
+  },
+  {
+    id: "or-later-clause",
+    term: '"Or Later" Clause',
+    definition:
+      'A provision in GPL-family licenses where the author specifies "GPL v2 or any later version" (GPL-2.0-or-later) instead of "GPL v2 only" (GPL-2.0-only). This allows downstream users to comply with the terms of a later GPL version if they choose. The distinction matters enormously: GPL-2.0-only code cannot be combined with GPL-3.0-only code, but GPL-2.0-or-later code can.',
+  },
+  {
+    id: "notice-file",
+    term: "NOTICE File",
+    definition:
+      "A file required by the Apache License 2.0 that contains attribution notices for the project and its contributors. When redistributing Apache-licensed code, you must include the NOTICE file alongside the LICENSE file. It typically contains the project name, copyright holders, and any required third-party attributions.",
+  },
+  {
+    id: "sbom",
+    term: "SBOM (Software Bill of Materials)",
+    definition:
+      "A formal inventory of all components, libraries, and dependencies used in a piece of software, including their versions and licenses. SBOMs are increasingly mandated by government regulations and enterprise procurement policies to ensure license compliance and identify security vulnerabilities across the software supply chain.",
+  },
 ];

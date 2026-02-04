@@ -15,6 +15,7 @@ export type PermissionType =
 
 export type ConditionType =
   | "include-copyright"
+  | "no-endorsement"
   | "document-changes"
   | "disclose-source"
   | "network-use-disclose"
@@ -82,6 +83,7 @@ export const PERMISSION_LABELS: Record<PermissionType, string> = {
 
 export const CONDITION_LABELS: Record<ConditionType, string> = {
   "include-copyright": "License & copyright notice",
+  "no-endorsement": "No endorsement",
   "document-changes": "State changes",
   "disclose-source": "Disclose source",
   "network-use-disclose": "Network use is distribution",
@@ -112,7 +114,9 @@ export const SECTIONS = [
   { id: "spectrum", label: "The Spectrum" },
   { id: "licenses", label: "License Guide" },
   { id: "comparison", label: "Comparison" },
+  { id: "compatibility", label: "Compatibility" },
   { id: "decision", label: "Which License?" },
+  { id: "how-to-apply", label: "How to Apply" },
   { id: "misconceptions", label: "Myths" },
   { id: "glossary", label: "Glossary" },
 ] as const;

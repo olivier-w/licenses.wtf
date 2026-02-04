@@ -58,7 +58,7 @@ export const licenses: License[] = [
     category: "permissive",
     categoryLabel: "Permissive",
     summary:
-      "A simple permissive license with only two clauses: attribution and no endorsement.",
+      "A simple permissive license with two clauses requiring preservation of copyright notices in source and binary distributions.",
     description:
       "The BSD 2-Clause License allows almost unrestricted use of the software as long as the copyright notice and license text are included in distributions. It is similar to the MIT License but uses different language. It does not include an explicit patent grant, which distinguishes it from Apache 2.0.",
     permissions: [
@@ -73,6 +73,30 @@ export const licenses: License[] = [
     spectrumPosition: 8,
     osiApproved: true,
     tldr: "Use freely, just keep the copyright notice and license text.",
+  },
+  {
+    id: "bsd-3-clause",
+    spdx: "BSD-3-Clause",
+    name: 'BSD 3-Clause "New" or "Revised" License',
+    shortName: "BSD 3-Clause",
+    category: "permissive",
+    categoryLabel: "Permissive",
+    summary:
+      "Like BSD 2-Clause, but adds a clause preventing use of the author's name to endorse derived products.",
+    description:
+      "The BSD 3-Clause License allows almost unrestricted use of the software as long as the copyright notice and license text are included in distributions. The third clause prohibits using the name of the copyright holder or contributors to endorse or promote products derived from the software without prior written permission. This non-endorsement clause is the key distinction from the 2-Clause variant.",
+    permissions: [
+      "commercial-use",
+      "modification",
+      "distribution",
+      "private-use",
+    ],
+    conditions: ["include-copyright", "no-endorsement"],
+    limitations: ["no-liability", "no-warranty"],
+    notableProjects: ["Go", "Nginx", "CMake"],
+    spectrumPosition: 10,
+    osiApproved: true,
+    tldr: "Like BSD 2-Clause, but also prevents using the author's name to endorse derived products.",
   },
   {
     id: "isc",
@@ -93,7 +117,7 @@ export const licenses: License[] = [
     ],
     conditions: ["include-copyright"],
     limitations: ["no-liability", "no-warranty"],
-    notableProjects: ["OpenBSD", "npm packages"],
+    notableProjects: ["OpenBSD", "npm CLI"],
     spectrumPosition: 3,
     osiApproved: true,
     tldr: "Do whatever you want, just keep the copyright notice. Even simpler than MIT.",
@@ -257,11 +281,10 @@ export const licenses: License[] = [
     summary:
       "Source code is available to view, but commercial use or production use may be restricted until a change date.",
     description:
-      "The Business Source License allows source code to be viewed and modified, but restricts production or commercial use until a specified change date, after which it converts to an open source license (typically Apache 2.0 or GPL). The FSL is a similar model. These licenses are not considered open source by the OSI because they restrict certain uses during the restricted period.",
+      "The Business Source License (BSL) allows source code to be viewed and modified, but restricts production or commercial use until a specified change date, after which it converts to an open source license (typically Apache 2.0 or GPL). The specific restrictions are defined by each licensor and vary per project. The Functional Source License (FSL) is a related model that specifically restricts only competing use and explicitly allows non-competing commercial use. Neither is considered open source by the OSI because they restrict certain uses.",
     permissions: ["modification", "distribution", "private-use"],
     conditions: [
       "include-copyright",
-      "document-changes",
     ],
     limitations: [
       "no-liability",
@@ -271,6 +294,30 @@ export const licenses: License[] = [
     spectrumPosition: 92,
     osiApproved: false,
     tldr: "You can see the code, but commercial or production use is restricted until the change date.",
+  },
+  {
+    id: "cc0-1.0",
+    spdx: "CC0-1.0",
+    name: "Creative Commons Zero v1.0 Universal",
+    shortName: "CC0",
+    category: "public-domain",
+    categoryLabel: "Public Domain",
+    summary:
+      "A public domain dedication with a more legally robust fallback for jurisdictions that don't recognize public domain.",
+    description:
+      "CC0 was drafted by Creative Commons with extensive international legal analysis. It waives all copyright and related rights (including database rights and moral rights where possible) worldwide. As a fallback for jurisdictions where waiver is not possible, it includes a broad unconditional license grant. CC0 is often preferred over the Unlicense for its more thorough handling of international copyright law.",
+    permissions: [
+      "commercial-use",
+      "modification",
+      "distribution",
+      "private-use",
+    ],
+    conditions: [],
+    limitations: ["no-liability", "no-warranty", "no-patent-use"],
+    notableProjects: ["SQLite (public domain)", "various datasets"],
+    spectrumPosition: 1,
+    osiApproved: false,
+    tldr: "Waive all rights worldwide. More legally robust than the Unlicense across jurisdictions.",
   },
   {
     id: "unlicense",
