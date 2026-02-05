@@ -58,7 +58,7 @@ export function SpectrumBar({ onLicenseClick }: SpectrumBarProps) {
               onFocus={() => setHoveredLicense(license)}
               onBlur={() => setHoveredLicense(null)}
               onClick={() => onLicenseClick?.(license)}
-              aria-label={`${license.shortName} — ${license.categoryLabel}`}
+              aria-label={`${license.shortName} - ${license.categoryLabel}`}
             >
               <span className="text-[9px] font-bold text-white leading-none">
                 {license.shortName.slice(0, 3)}

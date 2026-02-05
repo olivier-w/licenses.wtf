@@ -4,7 +4,7 @@ const REASONS = [
   {
     title: "No license = all rights reserved",
     description:
-      "Without a license, default copyright law applies. Nobody can copy, modify, or distribute your code — even if it's public on GitHub.",
+      "Without a license, default copyright law applies. Nobody can copy, modify, or distribute your code, even if it's public on GitHub.",
   },
   {
     title: "Protect yourself from liability",
@@ -58,7 +58,7 @@ export function WhyLicenses() {
           <span className="font-semibold">Real-world example:</span> In 2023,
           HashiCorp changed Terraform's license from the open-source MPL 2.0 to
           the source-available BSL 1.1. Because Terraform's existing code had
-          been irrevocably released under MPL 2.0 — an open source license — the
+          been irrevocably released under MPL 2.0, an open source license, the
           community was able to legally fork the last open-source version as
           OpenTofu. Understanding your license choice means understanding what
           happens when the rules change.

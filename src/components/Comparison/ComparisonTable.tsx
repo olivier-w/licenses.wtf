@@ -86,10 +86,10 @@ export function ComparisonTable() {
       </div>
 
       <div className="mt-10 overflow-x-auto rounded-xl border border-border bg-bg-elevated shadow-sm">
-        <table className="w-full min-w-[900px] border-collapse text-sm">
+        <table className="w-full min-w-225 border-collapse text-sm">
           <thead>
             <tr className="border-b border-border bg-surface">
-              <th className="sticky left-0 z-10 bg-surface px-4 py-3 text-left text-xs font-medium text-text-faint uppercase tracking-wider min-w-[140px]">
+              <th className="sticky left-0 z-10 bg-surface px-4 py-3 text-left text-xs font-medium text-text-faint uppercase tracking-wider min-w-35">
                 License
               </th>
               <th
@@ -184,7 +184,7 @@ export function ComparisonTable() {
                     ) : gplCompat === false ? (
                       <X />
                     ) : (
-                      <span className="text-text-faint">—</span>
+                      <span className="text-text-faint">N/A</span>
                     )}
                   </td>
                 </tr>

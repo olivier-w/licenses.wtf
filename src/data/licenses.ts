@@ -317,7 +317,7 @@ export const licenses: License[] = [
     notableProjects: ["GnuPG (test suite)", "Unsplash photos", "Public domain datasets"],
     spectrumPosition: 2,
     osiApproved: false,
-    tldr: "Waive all rights worldwide. More legally robust than the Unlicense across jurisdictions. Note: CC0 was never submitted to the OSI for approval as a software license — it wasn't rejected, just never reviewed in that context.",
+    tldr: "Waive all rights worldwide. More legally robust than the Unlicense across jurisdictions. Note: CC0 was never submitted to the OSI for approval as a software license. It wasn't rejected, just never reviewed in that context.",
   },
   {
     id: "unlicense",

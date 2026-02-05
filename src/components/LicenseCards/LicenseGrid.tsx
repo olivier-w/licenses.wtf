@@ -36,7 +36,7 @@ export function LicenseGrid() {
           License deep dives
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-text-muted">
-          Everything you need to know about each license — permissions,
+          Everything you need to know about each license: permissions,
           conditions, limitations, and which major projects use them.
         </p>
       </div>

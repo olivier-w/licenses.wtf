@@ -76,7 +76,7 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "apache-2.0", to: "gpl-3.0", compatible: true, note: "Resolved in GPL v3" },
   { from: "apache-2.0", to: "agpl-3.0", compatible: true },
 
-  // MPL 2.0 — has explicit GPL compatibility (Section 3.3)
+  // MPL 2.0 - has explicit GPL compatibility (Section 3.3)
   { from: "mpl-2.0", to: "mit", compatible: false },
   { from: "mpl-2.0", to: "bsd-2-clause", compatible: false },
   { from: "mpl-2.0", to: "bsd-3-clause", compatible: false },
@@ -87,7 +87,7 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "mpl-2.0", to: "gpl-3.0", compatible: true, note: "MPL 2.0 Section 3.3" },
   { from: "mpl-2.0", to: "agpl-3.0", compatible: true, note: "MPL 2.0 Section 3.3" },
 
-  // LGPL v3 — can flow into GPL v3+ but not permissive or GPL v2
+  // LGPL v3 - can flow into GPL v3+ but not permissive or GPL v2
   { from: "lgpl-3.0", to: "mit", compatible: false },
   { from: "lgpl-3.0", to: "bsd-2-clause", compatible: false },
   { from: "lgpl-3.0", to: "bsd-3-clause", compatible: false },
@@ -98,7 +98,7 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "lgpl-3.0", to: "gpl-3.0", compatible: true },
   { from: "lgpl-3.0", to: "agpl-3.0", compatible: true },
 
-  // GPL v2 — cannot flow into permissive or GPL v3 (unless "or later")
+  // GPL v2 - cannot flow into permissive or GPL v3 (unless "or later")
   { from: "gpl-2.0", to: "mit", compatible: false },
   { from: "gpl-2.0", to: "bsd-2-clause", compatible: false },
   { from: "gpl-2.0", to: "bsd-3-clause", compatible: false },
@@ -109,7 +109,7 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "gpl-2.0", to: "gpl-3.0", compatible: false, note: "Unless 'or later' clause" },
   { from: "gpl-2.0", to: "agpl-3.0", compatible: false, note: "Unless 'or later' clause" },
 
-  // GPL v3 — can flow into AGPL v3 but not anything less restrictive
+  // GPL v3 - can flow into AGPL v3 but not anything less restrictive
   { from: "gpl-3.0", to: "mit", compatible: false },
   { from: "gpl-3.0", to: "bsd-2-clause", compatible: false },
   { from: "gpl-3.0", to: "bsd-3-clause", compatible: false },
@@ -120,7 +120,7 @@ export const compatibilityData: CompatibilityEntry[] = [
   { from: "gpl-3.0", to: "gpl-3.0", compatible: true },
   { from: "gpl-3.0", to: "agpl-3.0", compatible: true },
 
-  // AGPL v3 — cannot flow into anything less restrictive
+  // AGPL v3 - cannot flow into anything less restrictive
   { from: "agpl-3.0", to: "mit", compatible: false },
   { from: "agpl-3.0", to: "bsd-2-clause", compatible: false },
   { from: "agpl-3.0", to: "bsd-3-clause", compatible: false },

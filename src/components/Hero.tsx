@@ -16,9 +16,6 @@ export function Hero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
       >
-        <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
-          The Developer's Guide
-        </p>
         <h1 className="font-display text-4xl font-bold leading-tight text-text md:text-6xl lg:text-7xl">
           Open source licenses,
           <br />
@@ -26,7 +23,7 @@ export function Hero() {
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-lg text-text-muted md:text-xl">
           Stop guessing what MIT, GPL, and Apache mean for your code.
-          Understand the spectrum from permissive to copyleft in plain English.
+          Understand the spectrum from permissive to copyleft in plain language.
         </p>
       </motion.div>
 

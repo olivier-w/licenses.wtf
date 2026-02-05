@@ -38,7 +38,7 @@ const STEPS = [
   {
     title: "Understand when obligations trigger",
     description:
-      "Most open source license obligations only apply when you distribute the software — sharing copies, publishing downloads, or shipping products. Internal use within your organization generally doesn't trigger copyleft requirements. The major exception is the AGPL, which treats providing software over a network as distribution. Know whether you're distributing, and you'll know which obligations apply.",
+      "Most open source license obligations only apply when you distribute the software: sharing copies, publishing downloads, or shipping products. Internal use within your organization generally doesn't trigger copyleft requirements. The major exception is the AGPL, which treats providing software over a network as distribution. Know whether you're distributing, and you'll know which obligations apply.",
     example:
       "Internal use only      → Most obligations don't apply\nDistributing binaries   → Must comply with license terms\nOffering as a service   → AGPL obligations apply\nUsing as a dependency   → Check if you're distributing",
   },
@@ -63,7 +63,7 @@ export function HowToApply() {
             className="rounded-xl border border-border bg-bg-elevated p-6 shadow-sm"
           >
             <div className="flex items-start gap-4">
-              <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
+              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
                 {i + 1}
               </span>
               <div className="min-w-0 flex-1">

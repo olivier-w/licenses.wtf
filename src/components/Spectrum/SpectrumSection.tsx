@@ -66,7 +66,7 @@ export function SpectrumSection() {
       <p className="mt-6 text-xs text-text-faint leading-relaxed text-center max-w-2xl mx-auto">
         Note: This spectrum simplifies a complex landscape. Copyleft licenses
         restrict how you distribute code, while source-available licenses
-        restrict what you can do with it — these are different kinds of
+        restrict what you can do with it. These are different kinds of
         requirements.
       </p>
     </SectionWrapper>

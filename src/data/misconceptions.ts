@@ -41,7 +41,7 @@ export const misconceptions: Misconception[] = [
     id: "agpl-only-saas",
     myth: "AGPL only matters if you're running a SaaS product",
     reality:
-      "The AGPL's network-interaction clause (Section 13) applies whenever users outside your organization interact with the software over a network, not just commercial SaaS. However, purely internal organizational use does not trigger this clause — per the FSF's interpretation, employees of the same organization are not external \"users\" in this context. The clause does apply to self-hosted applications accessed by external users via a browser, public-facing APIs, and any server-side software that communicates with outside clients. If external users interact with it remotely, the AGPL source-sharing requirement kicks in.",
+      "The AGPL's network-interaction clause (Section 13) applies whenever users outside your organization interact with the software over a network, not just commercial SaaS. However, purely internal organizational use does not trigger this clause. Per the FSF's interpretation, employees of the same organization are not external \"users\" in this context. The clause does apply to self-hosted applications accessed by external users via a browser, public-facing APIs, and any server-side software that communicates with outside clients. If external users interact with it remotely, the AGPL source-sharing requirement kicks in.",
   },
   {
     id: "bsd-mit-same",
@@ -59,7 +59,7 @@ export const misconceptions: Misconception[] = [
     id: "open-source-no-sue",
     myth: "Open source means the author can't sue you",
     reality:
-      "If you violate the license terms, you lose your license grant and the copyright holder can pursue infringement claims. GPL enforcement lawsuits are real — organizations like the Software Freedom Conservancy actively enforce GPL compliance. An open source license is a conditional grant of rights: meet the conditions, and you're fine. Violate them, and you're infringing copyright.",
+      "If you violate the license terms, you lose your license grant and the copyright holder can pursue infringement claims. GPL enforcement lawsuits are real, and organizations like the Software Freedom Conservancy actively enforce GPL compliance. An open source license is a conditional grant of rights: meet the conditions, and you're fine. Violate them, and you're infringing copyright.",
   },
   {
     id: "ai-code-no-issues",
@@ -83,6 +83,6 @@ export const misconceptions: Misconception[] = [
     id: "licenses-tested-in-court",
     myth: "Open source licenses have been thoroughly tested in court",
     reality:
-      "Most open source licenses have very little case law. The GPL has some enforcement history — notably through cases brought by the Software Freedom Conservancy and the Free Software Foundation — but even GPL litigation has mostly resulted in settlements rather than court rulings. Licenses like MIT, BSD, and Apache 2.0 have almost no direct judicial precedent. This doesn't mean they're unenforceable; it means many edge-case questions remain legally untested.",
+      "Most open source licenses have very little case law. The GPL has some enforcement history, notably through cases brought by the Software Freedom Conservancy and the Free Software Foundation, but even GPL litigation has mostly resulted in settlements rather than court rulings. Licenses like MIT, BSD, and Apache 2.0 have almost no direct judicial precedent. This doesn't mean they're unenforceable; it means many edge-case questions remain legally untested.",
   },
 ];
