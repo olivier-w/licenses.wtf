@@ -51,6 +51,7 @@ export interface Misconception {
   id: string;
   myth: string;
   reality: string;
+  isTrue: boolean;
 }
 
 export interface GlossaryTerm {
