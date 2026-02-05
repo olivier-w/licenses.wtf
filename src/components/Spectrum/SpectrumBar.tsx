@@ -55,7 +55,7 @@ interface SpectrumBarProps {
 
 export function SpectrumBar({ onLicenseClick }: SpectrumBarProps) {
   const [hoveredLicense, setHoveredLicense] = useState<License | null>(null);
-  const isTooltipOpen = useRef(false);
+  const [wasTooltipOpen, setWasTooltipOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const [containerWidth, setContainerWidth] = useState(0);
 
@@ -82,13 +82,13 @@ export function SpectrumBar({ onLicenseClick }: SpectrumBarProps) {
   );
 
   const handleMouseEnter = useCallback((license: License) => {
+    setWasTooltipOpen(hoveredLicense !== null);
     setHoveredLicense(license);
-    isTooltipOpen.current = true;
-  }, []);
+  }, [hoveredLicense]);
 
   const handleMouseLeave = useCallback(() => {
+    setWasTooltipOpen(false);
     setHoveredLicense(null);
-    isTooltipOpen.current = false;
   }, []);
 
   return (
@@ -160,7 +160,7 @@ export function SpectrumBar({ onLicenseClick }: SpectrumBarProps) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 4 }}
               transition={{
-                duration: isTooltipOpen.current ? 0.12 : 0.2,
+                duration: wasTooltipOpen ? 0.12 : 0.2,
                 ease: EASE_OUT,
               }}
               className="absolute rounded-xl border border-border bg-bg-elevated px-4 py-3 shadow-lg z-10 w-72 pointer-events-none"

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState, useRef, useCallback } from "react";
 import {
   ConvexProvider,
   ConvexReactClient,
@@ -14,16 +14,12 @@ const PARTICLE_COUNT = 6;
 function LikeButtonInner() {
   const count = useQuery(api.likes.get);
   const increment = useMutation(api.likes.increment);
-  const [liked, setLiked] = useState(false);
-
-  useEffect(() => {
-    if (localStorage.getItem("licenses-wtf-liked") === "1") {
-      setLiked(true);
-    }
-  }, []);
+  const [liked, setLiked] = useState(
+    () => localStorage.getItem("licenses-wtf-liked") === "1",
+  );
 
   const [animating, setAnimating] = useState(false);
-  const [particles, setParticles] = useState<number[]>([]);
+  const [particles, setParticles] = useState<{ batch: number; items: number[] }>({ batch: 0, items: [] });
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
   const particleTimeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
 
@@ -37,8 +33,8 @@ function LikeButtonInner() {
     timeoutRef.current = setTimeout(() => setAnimating(false), 500);
 
     if (particleTimeoutRef.current) clearTimeout(particleTimeoutRef.current);
-    setParticles(Array.from({ length: PARTICLE_COUNT }, (_, i) => i));
-    particleTimeoutRef.current = setTimeout(() => setParticles([]), 700);
+    setParticles((prev) => ({ batch: prev.batch + 1, items: Array.from({ length: PARTICLE_COUNT }, (_, i) => i) }));
+    particleTimeoutRef.current = setTimeout(() => setParticles((prev) => ({ ...prev, items: [] })), 700);
   }, [increment]);
 
   return (
@@ -51,9 +47,9 @@ function LikeButtonInner() {
     >
       <span className="like-button-heart-wrap">
         <span className="like-button-heart">{liked ? "\u2665" : "\u2661"}</span>
-        {particles.map((i) => (
+        {particles.items.map((i) => (
           <span
-            key={`${i}-${Date.now()}`}
+            key={`${i}-${particles.batch}`}
             className="like-particle"
             style={{ "--i": i } as React.CSSProperties}
           />
