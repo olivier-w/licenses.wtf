@@ -1,3 +1,5 @@
+import LikeButton from "../LikeButton";
+
 const LINKS = [
   { label: "Open Source Initiative", href: "https://opensource.org/licenses" },
   { label: "SPDX License List", href: "https://spdx.org/licenses/" },
@@ -46,13 +48,37 @@ export function Footer() {
 
         <div className="mt-10 border-t border-border pt-6 space-y-2">
           <p className="text-center text-xs text-text-faint">
-            This site is itself open source. License information sourced from
+            This site is itself{" "}
+            <a
+              href="https://github.com/olivier-w/licenses.wtf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text hover:text-accent transition-colors"
+            >
+              open source
+            </a>
+              . License information sourced from
             official license texts and the OSI.
           </p>
           <p className="text-center text-xs text-text-faint">
             License interpretations may vary by jurisdiction. This content
             reflects common understandings and is not legal advice.
           </p>
+        </div>
+
+        <div className="mt-16 flex flex-col items-center gap-3">
+          <p className="text-sm font-mono text-text-muted">
+            experiment by{" "}
+            <a
+              href="https://olivier.me"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text hover:text-accent transition-colors"
+            >
+              olivier
+            </a>
+          </p>
+          <LikeButton />
         </div>
       </div>
     </footer>

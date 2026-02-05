@@ -26,7 +26,7 @@ Single-page React app (no router) about open source licenses. Purely static — 
 - **Tailwind CSS 4** with `@tailwindcss/vite` plugin — no `tailwind.config` file. Design tokens defined via `@theme` block in `src/index.css`.
 - **`cn()` utility** (`src/lib/cn.ts`): wraps `clsx` + `tailwind-merge` for conditional class merging.
 - **Motion** (`motion/react`): used for animations throughout. Button press: `whileTap={{ scale: 0.97 }}`. Expandable content: `AnimatePresence` + `motion.div` with height/opacity. Staggered reveals: `delay: base + i * step`.
-- **Fonts**: Space Grotesk (display/headings via `font-display`), Inter (body via `font-body`), Fira Code (mono via `font-mono`). Loaded from Google Fonts in `index.html`.
+- **Fonts**: Bricolage Grotesque (display/headings via `font-display`), Geist (body via `font-body`), JetBrains Mono (mono via `font-mono`). Display and mono loaded from Google Fonts in `index.html`; Geist self-hosted via `@fontsource-variable/geist`.
 - **License spectrum colors**: `permissive` (green), `copyleft` (amber), `restrictive` (red), `source-available` (purple) — mapped via `CATEGORY_COLORS` in types.ts.
 - **No barrel exports** — components imported directly from their files.
 - **Light-mode only** — no dark mode.

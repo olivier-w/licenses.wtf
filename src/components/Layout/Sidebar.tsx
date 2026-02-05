@@ -1,5 +1,6 @@
 import { cn } from "../../lib/cn";
 import { SECTIONS, type SectionId } from "../../lib/types";
+import { ThemeToggle } from "../UI/ThemeToggle";
 
 interface SidebarProps {
   activeSection: SectionId;
@@ -36,10 +37,11 @@ export function Sidebar({ activeSection }: SidebarProps) {
           </ul>
         </nav>
 
-        <div className="border-t border-border px-5 py-4">
+        <div className="border-t border-border px-5 py-4 flex items-center justify-between">
           <p className="m-0 text-xs text-text-faint">
             Not legal advice.
           </p>
+          <ThemeToggle />
         </div>
       </div>
     </aside>
